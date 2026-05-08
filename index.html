@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>homepage</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">Advocate</div>
+     <div class="menu-toggle" onclick="toggleMenu()">
+    ☰
+  </div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Services.html">Practice Areas</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="consult.html" class="btn">Consult Now</a></li>
+      </ul>
+  </nav>
+
+  <div class="bg">
+    <div class="content">
+      <h1>Mrs.Gohar Jahan <br> Your Trusted Legal Advisor</h1>
+      <p>Justice You Deserve, Expertise You Trust</p>
+    </div>
+  </div>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+</body>
+</html>

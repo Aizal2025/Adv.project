@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Consult</title>
+</head>
+<body>
+
+ <nav class="navbar">
+    <div class="logo">Advocate</div>
+     <div class="menu-toggle" onclick="toggleMenu()">
+    ☰
+  </div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Services.html">Practice Areas</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="consult.html" class="btn">Consult Now</a></li>
+      </ul>
+  </nav>
+
+  <div class="consultation-box">
+
+  <h2>Book a Consultation</h2>
+
+  <form action="https://formsubmit.co/z1701152@gmail.com" method="POST">
+
+    <!-- Name -->
+    <input type="text" placeholder="Full Name" required>
+
+    <!-- Age -->
+    <input type="number" placeholder="Age" required>
+
+    <!-- Phone -->
+    <input type="tel" placeholder="Phone Number" required>
+
+    <!-- Email -->
+    <input type="email" placeholder="Email Address" required>
+
+    <!-- Address -->
+    <textarea placeholder="Full Address" rows="2" required></textarea>
+
+    <!-- Subject -->
+    <input type="text" placeholder="Subject (e.g. Property Case, Divorce, Legal Advice)" required>
+
+    <!-- Message -->
+    <textarea placeholder="Write a short message about your issue..." rows="4" required></textarea>
+
+    <!-- Submit -->
+    <button type="submit">Submit Request</button>
+
+  </form>
+  <div id="success-popup" class="success-popup">
+  Message Sent Successfully ✅
+</div>
+
+</div>
+
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- ABOUT WEBSITE -->
+    <div class="footer-about">
+      <h3>Advocate</h3>
+      <p>
+        This website provides professional legal services including Criminal, Family, Property, and Civil law consultation. 
+        With 10+ years of experience, we ensure reliable and result-oriented legal support.
+      </p>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Services.html">Practice Areas</a>
+      <a href="contact.html">Contact</a>
+      <a href="consult.html">Consultation</a>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-contact">
+      <h4>Contact Info</h4>
+      <p>Email: advgoharjhan@gmail.com</p>
+      <p>Location: Sahibabad, Ghaziabad</p>
+      <p>Work: Legal Consultation, Case Handling, Documentation</p>
+    </div>
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2026 Advocate Website | Designed & Developed by ZiyaKhan</p>
+    <a href="#">GitHub</a>
+  </div>
+
+</footer>
+
+<script>
+  //navbar//
+  function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
+  // form//
+const form = document.querySelector("form");
+const popup = document.getElementById("success-popup");
+
+form.addEventListener("submit", function(){
+
+  popup.classList.add("show");
+
+  setTimeout(() => {
+    popup.classList.remove("show");
+  }, 3000);
+
+});
+</script>
+</body>
+</html>

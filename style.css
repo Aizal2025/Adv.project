@@ -1,0 +1,596 @@
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body, html {
+  height: 100%;
+}
+body {
+  padding-top: 70px; /* navbar height ke equal */
+}
+
+/* Navbar */
+.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px; /* 🔥 fixed height */
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 30px;
+  background: rgba(0,0,0,0.95);
+  border-bottom: 2px solid #D4AF37;
+}
+/* Logo */
+.logo{
+  color:#D4AF37;
+  font-size:26px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+
+/* Nav links */
+.nav-links{
+  display:flex;
+  list-style:none;
+}
+
+.nav-links li{
+  margin:0 15px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#fff;
+  font-size:16px;
+  position:relative;
+  transition:0.3s;
+}
+
+/* Gold underline hover */
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:0%;
+  height:2px;
+  background:#D4AF37;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#D4AF37;
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+/* Button */
+.btn{
+  padding:8px 18px;
+  border:1px solid #D4AF37;
+  color:#D4AF37;
+  text-decoration:none;
+  border-radius:20px;
+  transition:0.3s;
+  font-size:14px;
+}
+
+.btn:hover{
+  background:#D4AF37;
+  color:#000;
+}
+
+/* Menu toggle */
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  color:#D4AF37;
+  cursor:pointer;
+}
+
+/*  MOBILE VIEW */
+@media (max-width: 768px){
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .nav-links {
+    position: fixed; 
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #111;
+
+    flex-direction: column;
+    align-items: center;
+
+    display: none;
+    padding: 20px 0;
+
+    z-index: 999;
+  }
+
+  .nav-links.active{
+    display: flex;
+  }
+
+  .nav-links li{
+    margin: 15px 0;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+.nav-links{
+  backdrop-filter:#111;
+}
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  color:#D4AF37;
+  cursor:pointer;
+}
+
+@media (max-width:768px){
+
+  .menu-toggle{
+    display:block;
+  }
+
+}
+/* Background */
+.bg{
+  height:100vh;
+  background:url("image1.png") no-repeat center/cover;
+  background-attachment: fixed; /* 🔥 added */
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
+
+/* Dark overlay */
+.bg::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.65);
+  z-index:1;
+}
+
+/* Content */
+.content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  color:#fff;
+}
+
+/* TITLE */
+.content h1{
+  font-size:44px;
+  font-family:'Poppins', sans-serif;
+  opacity:0;
+  position:relative;
+  animation:fadeInTitle 2s forwards;
+  animation-delay:1s;
+  color:#ffffff;
+}
+
+/* GOLD BLOCK ANIMATION */
+.content h1::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:0%;
+  height:100%;
+  background:#D4AF37;
+  animation:blockReveal 2s cubic-bezier(.74,.06,.4,.92) forwards;
+}
+
+/* GOLD DOT */
+.content h1::after{
+  content:"";
+  width:8px;
+  height:8px;
+  background:#D4AF37;
+  border-radius:50%;
+  position:absolute;
+  right:-12px;
+  bottom:10px;
+  animation:dotPop 0.6s ease forwards;
+  animation-delay:2s;
+}
+
+/* SUBTITLE */
+.content p{
+  margin-top:12px;
+  font-size:16px;
+  letter-spacing:3px;
+  opacity:0;
+  animation:fadeInSub 2s forwards;
+  animation-delay:2.5s;
+  color:#fff;
+}
+
+/* ANIMATIONS */
+@keyframes blockReveal{
+  0%{width:0%; left:0;}
+  50%{width:100%; left:0;}
+  100%{width:0; left:100%;}
+}
+
+@keyframes fadeInTitle{
+  to{opacity:1;}
+}
+
+@keyframes fadeInSub{
+  to{opacity:0.85;}
+}
+
+@keyframes dotPop{
+  from{transform:scale(0); opacity:0;}
+  to{transform:scale(1); opacity:1;}
+}
+
+/* Mobile fix for background */
+@media (max-width: 768px) {
+  .bg {
+    background-attachment: scroll;
+  }
+
+  .content h1 {
+    font-size:28px;
+  }
+}
+/*-----------------------------------contact-----------------------------*/
+
+/* RESET + GLOBAL FIX */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* 🔥 no horizontal scroll */
+  background: #000;
+}
+
+/* MEDIA FIX */
+img, iframe {
+  max-width: 100%;
+  display: block;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 1000;
+}
+
+/* BODY SPACE FOR NAVBAR */
+body {
+  padding-top: 70px;
+}
+
+/* CONTENT */
+.content {
+  text-align: center;
+  color: #000;
+}
+
+/* CENTER BOX */
+.center-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 900px;
+  width: 100%;
+  margin: 80px auto;
+  padding: 20px;
+  background: #111;
+  border-radius: 15px;
+  color: white;
+}
+
+/* MAP */
+.mini-map {
+  width: 45%;
+  height: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid gold;
+}
+
+/* CONTACT */
+.contact-info {
+  width: 50%;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+
+  .center-box {
+    flex-direction: column;
+  }
+
+  .mini-map,
+  .contact-info {
+    width: 100%;
+  }
+
+  .mini-map {
+    height: 200px;
+  }
+}
+
+/* REVIEWS */
+.reviews-section {
+  padding: 50px 10px;
+  background: #000;
+  color: white;
+  text-align: center;
+}
+
+.reviews-section h2 {
+  color: gold;
+  margin-bottom: 30px;
+}
+
+/* SLIDER */
+.slider {
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* 🔥 IMPORTANT FIX */
+.slides {
+  display: flex;
+  width: 300%;
+}
+
+/* EACH SLIDE */
+.slide {
+  flex: 0 0 100%;
+}
+
+/* CARD */
+.review-card {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid gold;
+}
+
+.stars {
+  color: gold;
+  margin-bottom: 10px;
+}
+
+/* ANIMATION */
+@keyframes slide {
+  0%,30% { transform: translateX(0); }
+  35%,65% { transform: translateX(-100%); }
+  70%,100% { transform: translateX(-200%); }
+}
+
+.slides {
+  animation: slide 12s infinite;
+}
+
+/*-------------------------------------------- CONSULT FORM---------------------------- */
+.consultation-box {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 20px;
+  background: #111;
+  border-radius: 15px;
+  color: white;
+}
+
+.consultation-box input,
+.consultation-box textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+}
+
+.consultation-box button {
+  width: 100%;
+  padding: 12px;
+  background: gold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.success-popup{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #111;
+  color: #D4AF37;
+  padding: 15px 25px;
+  border: 2px solid #D4AF37;
+  border-radius: 10px;
+  font-size: 16px;
+  z-index: 9999;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+
+  transition: 0.4s ease;
+}
+
+.success-popup.show{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+/*-------------------------------About-section--------------------------*/
+/* ABOUT SECTION */
+.about-section {
+  position: relative;
+  padding: 80px 20px;
+  background: url("law-bg.jpg") center/cover no-repeat;
+  color: white;
+}
+
+/* DARK OVERLAY */
+.about-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+}
+
+/* CONTAINER */
+.about-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: auto;
+  gap: 40px;
+}
+
+/* IMAGE */
+.about-img {
+  flex: 1;
+}
+
+.about-img img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 15px;
+  border: 3px solid gold;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+/* CONTENT */
+.about-content {
+  flex: 1;
+}
+
+.about-content h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: gold;
+}
+
+.about-content p {
+  margin-bottom: 15px;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/*-----------------------service---------------------------------*/
+.practice-section {
+  padding: 80px 20px;
+  background: #000;
+  color: white;
+  text-align: center;
+}
+
+.practice-section h2 {
+  color: gold;
+  margin-bottom: 40px;
+}
+
+.practice-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid gold;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(255,215,0,0.5);
+}
+
+.card h3 {
+  color: gold;
+  margin-bottom: 10px;
+}
+
+/*----------footer------------------*/
+.footer {
+  background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+  color: #ddd;
+  padding: 50px 20px 20px;
+  margin-top: 50px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.footer h3, .footer h4 {
+  color: #f5c542;
+  margin-bottom: 15px;
+}
+
+.footer p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer a {
+  display: block;
+  color: #bbb;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  color: #f5c542;
+  transform: translateX(5px);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 13px;
+  color: #aaa;
+}
