@@ -28,33 +28,38 @@
 
   <h2>Book a Consultation</h2>
 
-  <form action="https://formsubmit.co/z1701152@gmail.com" method="POST">
+  <form action="https://formsubmit.co/raisaparveeb05@gmail.com" method="POST">
 
-    <!-- Name -->
-    <input type="text" placeholder="Full Name" required>
+  <input type="hidden" name="_captcha" value="false">
 
-    <!-- Age -->
-    <input type="number" placeholder="Age" required>
+  <input type="hidden" name="_template" value="table">
 
-    <!-- Phone -->
-    <input type="tel" placeholder="Phone Number" required>
+  <input type="hidden" name="_subject" value="New Consultation Request">
 
-    <!-- Email -->
-    <input type="email" placeholder="Email Address" required>
+  <!-- Name -->
+  <input type="text" name="Client Name" placeholder="Full Name" required>
 
-    <!-- Address -->
-    <textarea placeholder="Full Address" rows="2" required></textarea>
+  <!-- Age -->
+  <input type="number" name="Age" placeholder="Age" required>
 
-    <!-- Subject -->
-    <input type="text" placeholder="Subject (e.g. Property Case, Divorce, Legal Advice)" required>
+  <!-- Phone -->
+  <input type="tel" name="Phone Number" placeholder="Phone Number" required>
 
-    <!-- Message -->
-    <textarea placeholder="Write a short message about your issue..." rows="4" required></textarea>
+  <!-- Email -->
+  <input type="email" name="Client Email" placeholder="Email Address" required>
 
-    <!-- Submit -->
-    <button type="submit">Submit Request</button>
+  <!-- Address -->
+  <textarea name="Address" placeholder="Full Address" rows="2" required></textarea>
 
-  </form>
+  <!-- Subject -->
+  <input type="text" name="Case Subject" placeholder="Subject" required>
+
+  <!-- Message -->
+  <textarea name="Client Message" placeholder="Write your issue..." rows="4" required></textarea>
+
+  <button type="submit">Submit Request</button>
+
+</form>
   <div id="success-popup" class="success-popup">
   Message Sent Successfully ✅
 </div>
